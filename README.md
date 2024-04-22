@@ -26,7 +26,7 @@
 
 ## Деплой
 
-(https://test-ally.vercel.app/)[https://test-ally.vercel.app/]
+[https://test-ally.vercel.app/](https://test-ally.vercel.app/)
 
 ## Установка
 
