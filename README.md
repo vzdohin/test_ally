@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Задание
 
-## Getting Started
+Реализация формы авторизации с использованием Next.js и React Hook Form.
 
-First, run the development server:
+## Описание
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Форма реализована в два шага:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Первый шаг**:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   - Поле ввода электронной почты (Email).
+   - Кнопка для перехода на второй шаг.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Второй шаг**:
+   - Поле ввода пароля, скрытое звездочками.
+   - Кнопка "показать" для отображения введенного пароля.
+   - Кнопка для отправки формы.
 
-## Learn More
+Отправка формы осуществляется на произвольный URL, имитирующий взаимодействие с сервером.
 
-To learn more about Next.js, take a look at the following resources:
+## Реализованные дополнительные возможности
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Валидация электронной почты на первом шаге.
+- Обработка и отображение ошибок, полученных от имитации сервера, с помощью React Hook Form.
+- Мокирование успешного ответа от сервера для тестирования фронтенда без готового бэкенда.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Установка
 
-## Deploy on Vercel
+1. Клонировать репозиторий:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone <repository-url>
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Установить зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. Запустить проект:
+
+   ```bash
+   npm run dev
+   ```
+
+## Использование
+
+Форма доступна по адресу `http://localhost:3000/` после запуска проекта.
+
+- Введите ваш Email и нажмите "Next" для перехода ко второму шагу.
+- Введите ваш пароль и используйте кнопку "показать", если необходимо увидеть введенные данные.
+- Нажмите "Submit" для отправки формы. В случае успешной отправки появится сообщение с данными, в противном случае будет показано сообщение об ошибке.
+
+## Тестирование
+
+Для имитации ошибки сервера используйте Email `error@example.com`. В этом случае будет показано сообщение об ошибке.
+
+## Валидация
+
+Валидация Email осуществляется по следующим правилам:
+
+- Должен быть в формате `index@mail.com`.
+- Должен содержать символ `@`.
+- Не должен быть пустым.
+
+Пароль валидируется на минимальную длину в 6 символов.
